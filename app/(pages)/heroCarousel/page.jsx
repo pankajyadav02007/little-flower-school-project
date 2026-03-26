@@ -65,7 +65,7 @@ const HeroCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % CAROUSEL_ITEMS.length);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, [index]);
@@ -78,7 +78,7 @@ const HeroCarousel = () => {
     );
 
   return (
-    <section className="relative min-h-[700px] flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <section className="relative min-h-[700px] flex flex-col items-center justify-center overflow-hidden pt-12 md:pt-32 pb-20 bg-gradient-to-br from-blue-300 via-white to-blue-100">
       {/* Pattern Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.05)_1px,transparent_0)] [background-size:40px_40px]" />
 
@@ -111,7 +111,7 @@ const HeroCarousel = () => {
                 rotateY: diff > 0 ? -35 : diff < 0 ? 35 : 0,
               }}
               transition={{ type: "spring", stiffness: 200, damping: 25 }}
-              className="absolute w-[800px] sm:w-[850px] h-[350px] rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.25)] cursor-pointer group"
+              className="absolute w-[350px] md:w-[800px] sm:w-[850px] h-[350px] rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.25)] cursor-pointer group"
               onClick={() => setIndex(i)}
             >
               <img
@@ -150,7 +150,7 @@ const HeroCarousel = () => {
       <div className="flex items-center gap-8 mt-12 z-10">
         <button
           onClick={prev}
-          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110"
+          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
         >
           <ChevronLeft size={28} />
         </button>
@@ -169,9 +169,9 @@ const HeroCarousel = () => {
 
         <button
           onClick={next}
-          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110"
+          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
         >
-          <ChevronRight size={28} />
+          <ChevronRight size={26} />
         </button>
       </div>
     </section>
