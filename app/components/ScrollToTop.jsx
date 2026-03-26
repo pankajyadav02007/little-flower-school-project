@@ -19,7 +19,7 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 p-4 bg-green-300 text-white rounded-full shadow-2xl hover:bg-red-700 transition-all"
+          className="fixed bottom-4 md:bottom-8 right-4 md:right-8 z-50 p-2 md:p-4 bg-green-300 text-white rounded-full shadow-2xl hover:bg-red-700 transition-all cursor-pointer"
         >
           <ChevronUp size={24} />
         </motion.button>

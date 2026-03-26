@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-blue-50 relative overflow-hidden">
+    <section className=" py-12 md:py-24 px-6 bg-blue-50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <motion.div
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-black text-blue-900 mb-4 tracking-tight"
+            className=" text-2xl md:text-4xl font-black text-blue-900 mb-4 tracking-tight"
           >
             Voices of Our Community
           </motion.h2>
@@ -97,12 +97,12 @@ const TestimonialsSection = () => {
               whileHover={{ y: -10 }}
               className="bg-blue-900 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-200/50 border border-blue-800 flex flex-col group transition-all duration-500"
             >
-              <div className="p-10 flex-grow relative">
+              <div className="p-4 md:p-10 flex-grow relative">
                 {/* Quote Icon */}
                 <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-500">
                   <svg
-                    width="40"
-                    height="40"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >

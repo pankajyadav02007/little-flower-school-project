@@ -35,19 +35,19 @@ export default function App() {
         <HeroCarousel />
 
         {/* Welcome Section */}
-        <section className="py-20 px-6 text-center max-w-4xl mx-auto">
+        <section className="py-5 md:py-20 md:px-6 px-1 text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+            <h1 className="text-2xl md:text-4xl md:text-5xl font-bold text-blue-900 mb-6">
               Welcome to Little Flower School
             </h1>
-            <p className="text-blue-700 leading-relaxed mb-8">
+            <p className="text-gray-700 leading-relaxed mb-8">
               Our English-medium school is dedicated to providing high-quality, internationally focused education that fosters intellectual growth, personal development, and global citizenship.
             </p>
-            <button className="px-10 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-300 cursor-pointer">
+            <button className="px-5 md:px-10 py-2 md:py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-300 cursor-pointer">
               Apply Now
             </button>
           </motion.div>
@@ -59,10 +59,9 @@ export default function App() {
         <MentorsSection/>
 <AdmissionSection/>
         <TestimonialsSection/>
-        {/* Stats */}
+        
         <StatsSection />
-        {/* <RegisterForm/>
-        <ContactForm/> */}
+       
 
         {/* Gallery */}
         <section className="py-20 px-6">
@@ -100,10 +99,10 @@ export default function App() {
         {/* CTA Banner */}
         <section className="bg-blue-700 py-12 px-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">
+            <h2 className="md:text-2xl md:text-3xl font-bold text-white text-center md:text-left">
               Looking for the Academic Calendar?
             </h2>
-            <button className="px-8 py-3 bg-white text-blue-700 rounded-md font-bold hover:bg-gray-100 transition-all shadow-lg">
+            <button className="px-2 md:px-8 py-2 md:py-3 bg-white text-blue-700 rounded-md font-bold hover:bg-gray-100 transition-all shadow-lg cursor-pointer">
               Download Now!
             </button>
           </div>

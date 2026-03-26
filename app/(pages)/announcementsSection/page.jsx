@@ -21,11 +21,11 @@ const ANNOUNCEMENTS = [
 
 const AnnouncementsSection = () => {
   return (
-    <section className="py-20 px-6 bg-blue-50">
+    <section className="py-12 md:py-20 px-6 bg-blue-50">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-blue-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-2">
             Announcements
           </h2>
           <p className="text-sm text-blue-700">

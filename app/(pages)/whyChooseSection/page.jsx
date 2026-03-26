@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-24 px-6 bg-gray-50 relative overflow-hidden">
+    <section className="px-2 md:px-6 bg-gray-50 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <motion.div
         initial={{ x: 100, opacity: 0, rotate: 45 }}
@@ -24,12 +24,12 @@ const WhyChooseSection = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 md:mb-16">
           <motion.h2
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl font-black text-blue-900 mb-4 tracking-widest uppercase"
+            className="text-2xl md:text-4xl font-black text-blue-900 mb-4 tracking-widest uppercase"
           >
             Why Choose Little Flower?
           </motion.h2>

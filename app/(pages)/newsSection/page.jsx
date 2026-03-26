@@ -35,11 +35,11 @@ const NEWS = [
 
 const NewsSection = () => {
   return (
-    <section className="py-20 px-6 bg-blue-50">
+    <section className="py-6 md:py-20 px-6 bg-blue-50">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-4">
             News & Events
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full" />
@@ -77,7 +77,7 @@ const NewsSection = () => {
                   {item.excerpt}
                 </p>
 
-                <button className="px-6 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">
+                <button className="px-6 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer">
                   Read More
                 </button>
               </div>
@@ -87,7 +87,7 @@ const NewsSection = () => {
 
         {/* Button */}
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
+          <button className="cursor-pointer px-2 md:px-8 py-2 md:py-3 bg-blue-600 text-white rounded-full md:font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
             View More
           </button>
         </div>

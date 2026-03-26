@@ -13,7 +13,7 @@ const STATS = [
 
 const StatsSection = () => {
   return (
-    <section className="bg-blue-900 py-16 px-6 relative overflow-hidden">
+    <section className="bg-blue-900 py-6 md:py-16 px-6 relative overflow-hidden">
       {/* Decorative shapes */}
       <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white/20 rounded-full animate-pulse" />
       <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-white/10 rotate-45" />
@@ -22,7 +22,7 @@ const StatsSection = () => {
         {/* Heading */}
         <div className="text-center mb-12 text-white">
           <GraduationCap size={48} className="mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-xl md:text-3xl font-bold mb-2">
             School Statistics at a Glance!
           </h2>
           <p className="opacity-80">Top Ranked Private School</p>
@@ -37,9 +37,11 @@ const StatsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center text-white"
+              className="text-center text-white "
             >
-              <div className="text-4xl font-bold mb-2">{stat.value}</div>
+              <div className="text-2xl md:text-4xl font-bold mb-2">
+                {stat.value}
+              </div>
               <div className="text-sm opacity-80 uppercase tracking-wider">
                 {stat.label}
               </div>

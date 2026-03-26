@@ -71,47 +71,44 @@ const HeroCarousel = () => {
   }, [index]);
 
   const next = () => setIndex((prev) => (prev + 1) % CAROUSEL_ITEMS.length);
-
   const prev = () =>
     setIndex(
       (prev) => (prev - 1 + CAROUSEL_ITEMS.length) % CAROUSEL_ITEMS.length,
     );
 
   return (
-    <section className="relative min-h-[700px] flex flex-col items-center justify-center overflow-hidden pt-12 md:pt-32 pb-20 bg-gradient-to-br from-blue-300 via-white to-blue-100">
-      {/* Pattern Background */}
+    <section className="relative min-h-[600px] md:min-h-[700px] flex flex-col items-center justify-center overflow-hidden pt-12 md:pt-32 pb-20 bg-gradient-to-br from-blue-300 via-white to-blue-100">
+      {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.05)_1px,transparent_0)] [background-size:40px_40px]" />
-
-      {/* Glow Effects */}
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-blue-400/20 rounded-full blur-3xl" />
       <div className="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-indigo-400/20 rounded-full blur-3xl" />
-
       <DecorativeShapes />
 
-      <div className="relative w-full max-w-7xl h-[450px] flex items-center justify-center perspective-1000">
+      {/* Carousel */}
+      <div className="relative w-full max-w-7xl h-[300px] sm:h-[350px] md:h-[500px] flex items-center justify-center perspective-1000">
         {CAROUSEL_ITEMS.map((item, i) => {
           const diff = i - index;
           const absDiff = Math.abs(diff);
           const isCenter = i === index;
 
-          let xOffset = diff * 350;
+          let xOffset = diff * 300;
           if (diff > CAROUSEL_ITEMS.length / 2)
-            xOffset -= CAROUSEL_ITEMS.length * 350;
+            xOffset -= CAROUSEL_ITEMS.length * 300;
           if (diff < -CAROUSEL_ITEMS.length / 2)
-            xOffset += CAROUSEL_ITEMS.length * 350;
+            xOffset += CAROUSEL_ITEMS.length * 300;
 
           return (
             <motion.div
               key={item.id}
               animate={{
                 x: xOffset,
-                scale: isCenter ? 1.1 : 0.8,
+                scale: isCenter ? 1.05 : 0.8,
                 opacity: absDiff === 0 ? 1 : absDiff === 1 ? 0.6 : 0,
                 zIndex: 10 - absDiff,
-                rotateY: diff > 0 ? -35 : diff < 0 ? 35 : 0,
+                rotateY: diff > 0 ? -30 : diff < 0 ? 30 : 0,
               }}
               transition={{ type: "spring", stiffness: 200, damping: 25 }}
-              className="absolute w-[350px] md:w-[800px] sm:w-[850px] h-[350px] rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.25)] cursor-pointer group"
+              className="absolute w-[290px] sm:w-[400px] md:w-[800px] h-[290px] sm:h-[450px] md:h-[450px] rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.25)] cursor-pointer group"
               onClick={() => setIndex(i)}
             >
               <img
@@ -121,14 +118,14 @@ const HeroCarousel = () => {
               />
 
               <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white transition-opacity duration-500 ${
+                className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white transition-opacity duration-500 ${
                   isCenter ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <motion.h3
                   initial={{ y: 20, opacity: 0 }}
                   animate={isCenter ? { y: 0, opacity: 1 } : {}}
-                  className="text-3xl font-black mb-2"
+                  className="text-xl sm:text-2xl md:text-3xl font-black mb-2"
                 >
                   {item.title}
                 </motion.h3>
@@ -136,7 +133,7 @@ const HeroCarousel = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={isCenter ? { y: 0, opacity: 1 } : {}}
                   transition={{ delay: 0.1 }}
-                  className="text-sm opacity-80 leading-relaxed max-w-md"
+                  className="text-xs sm:text-sm md:text-base opacity-80 leading-relaxed max-w-xs sm:max-w-md md:max-w-md"
                 >
                   {item.description}
                 </motion.p>
@@ -147,21 +144,23 @@ const HeroCarousel = () => {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center gap-8 mt-12 z-10">
+      <div className="flex items-center gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10 z-10">
         <button
           onClick={prev}
-          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
+          className="p-2 sm:p-3 md:p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
         >
-          <ChevronLeft size={28} />
+          <ChevronLeft size={20} sm={24} md={28} />
         </button>
 
-        <div className="flex gap-3">
+        <div className="flex gap-2 sm:gap-3 md:gap-3">
           {CAROUSEL_ITEMS.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
               className={`${
-                index === i ? "bg-blue-600 w-10" : "bg-gray-200 w-2.5"
+                index === i
+                  ? "bg-blue-600 w-4 sm:w-6 md:w-10"
+                  : "bg-gray-200 w-2.5"
               } h-2.5 rounded-full transition-all duration-500`}
             />
           ))}
@@ -169,9 +168,9 @@ const HeroCarousel = () => {
 
         <button
           onClick={next}
-          className="p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
+          className="p-2 sm:p-3 md:p-4 bg-white shadow-xl rounded-full text-gray-800 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-90 cursor-pointer"
         >
-          <ChevronRight size={26} />
+          <ChevronRight size={20} sm={24} md={28} />
         </button>
       </div>
     </section>
